@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proyect1/components/Text.dart';
 
+import 'components/cards.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -73,14 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:  [
-              const Expanded( //It is set constant
+               Expanded( //It is set constant
                 child: Padding(
-                padding: EdgeInsets.all(9.0),
-                child: Text(
-                  'FUNTIMES',//The value of text
-                  textAlign: TextAlign.start,//The alignment of text
-                  style: TextStyle( fontFamily: 'Roboto',fontSize: 15,fontWeight: FontWeight.bold)//The style and attributes of text
-                  ),
+                padding: const EdgeInsets.all(9.0),
+                child: ClassicText(content: "FUNTIMES",textSize: 15)
                 )
                 
                 ),
@@ -97,61 +95,29 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:  const [
+            children:  [
               Expanded( //It is set constant
                 child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  'TOP APP\'22',//The value of text
-                  textAlign: TextAlign.start,//The alignment of text
-                  style: TextStyle( fontFamily: 'Roboto',fontSize: 15,fontWeight: FontWeight.bold,
-                  backgroundColor: Colors.black, color: Colors.white
-                   ),//The style and attributes of text
-                  ),
+                padding: const EdgeInsets.all(8.0),
+                child: ClassicText(content: "TOP APP'22", textSize: 15)
                   )
                 )
             ],
           ),
           Padding(
             padding: const EdgeInsets.all(9.0),
-            child: RichText(
-              text:const TextSpan(
-                text: 'Introducing the first',
-                style: TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black),
-                children: <TextSpan>[
-                  TextSpan(text: ' all-in-one tool', style: TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black )),
-                  TextSpan(text: ' to help you put your financial assents in the best possible opportunities.', style: TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black ))
-                ]
-              )
-            ),
+            child: 
+              TripleText(
+                text1: 'Introducing the first',
+                text2: ' all-in-one tool',
+                text3: ' to help you put your financial assents in the best possible opportunities.')
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Card>[
-              Card(
-                borderOnForeground: true,
-                child: Text(
-                  'Strategy',
-                  textAlign:TextAlign.start,
-                  style: TextStyle(fontFamily: 'Roboto',fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black, backgroundColor: Colors.transparent),
-                ),
-              ),
-              Card(
-                borderOnForeground: true,
-                child:Text(
-                  'Team',
-                  textAlign:TextAlign.start,
-                  style: TextStyle(fontFamily: 'Roboto',fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black, backgroundColor: Colors.transparent),
-                ),
-              ),
-              Card(
-                borderOnForeground: true,
-                child:Text(
-                  'Wired',
-                  textAlign:TextAlign.start,
-                  style: TextStyle(fontFamily: 'Roboto',fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black, backgroundColor: Colors.transparent),
-                ),
-              ),
+            children: <Widget>[
+              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS"),
+              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS"),
+              OutlinedCardExample(title: "Wired", content: "OUR PARTNERS")
             ],
           )
             ]
