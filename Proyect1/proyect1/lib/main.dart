@@ -76,12 +76,12 @@ class app extends StatelessWidget{
                 thickness: 5.0,
                 color: Colors.black,
               ),
-              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.abc_outlined)),
+              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.add_a_photo_rounded)),
               const Divider(
                 thickness: 5.0,
                 color: Colors.black,
               ),
-              OutlinedCardExample(title: "WIRED", content: "OUR PARTNERS",icon: const Icon(Icons.abc_outlined))       
+              OutlinedCardExample(title: "WIRED", content: "OUR PARTNERS",icon: const Icon(Icons.hourglass_empty_sharp))       
           ],
           ),
           ) 
