@@ -8,13 +8,12 @@ class titleSection extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Center(
-      heightFactor: 1.5,
       child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
               padding: const EdgeInsets.all(9.0),
-              child: ClassicText(content: "FINTIMES", textSize: 30),
+              child: ClassicText(content: "FINTIMES", textSize: 10),
               ),
             Padding(
                     padding: const EdgeInsets.all(9.0),
@@ -34,9 +33,9 @@ class motivationalSection extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child:
-      ClassicText(content: "Everything about investing plus way more ", textSize: 20)
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0, bottom: 30.0, left: 9.0, right: 9.0),
+      child:ClassicText(content: "Everything about investing plus way more.", textSize: 30)
     );
   }
 }
