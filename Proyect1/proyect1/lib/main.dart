@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:proyect1/Structure/Structures.dart';
 import 'package:proyect1/components/Text.dart';
-
 import 'components/cards.dart';
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Funtimes'),
+      home: const app(),
     );
   }
 }
@@ -44,11 +44,35 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+class app extends StatelessWidget{
+  const app ({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Proyect 1",
+      
+      home: Scaffold(
+        
+          // ignore: prefer_const_literals_to_create_immutables
+          body: ListView(
+            padding: const EdgeInsets.only(top: 20.0, bottom: 50.0, left: 20.0, right: 20.0),
+            children: [  
+              const titleSection().build(context), 
+              const motivationalSection(),
+              OutlinedCardExample(title: "title", content: "Ah",icon: const Icon(Icons.access_alarm_outlined)),
+              OutlinedCardExample(title: "title", content: "Ah",icon: Icon(Icons.abc_outlined)),
+              OutlinedCardExample(title: "title", content: "Ah",icon: Icon(Icons.abc_outlined))       
+          ],
+          ), 
+      ),
+    );
+  }
 
+}
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -84,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(//It is not set constant
                   child: Padding(
-                    padding: EdgeInsets.all(9.0),
+                    padding: const EdgeInsets.all(9.0),
                     child:IconButton(
                     alignment: Alignment.topRight,//The alignment
                     icon: const Icon(Icons.menu),//It is a constant icon
@@ -115,9 +139,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS"),
-              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS"),
-              OutlinedCardExample(title: "Wired", content: "OUR PARTNERS")
+              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: Icon(Icons.abc_outlined)),
+              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: Icon(Icons.abc_outlined)),
+              OutlinedCardExample(title: "Wired", content: "OUR PARTNERS",icon: Icon(Icons.abc_outlined))
             ],
           )
             ]

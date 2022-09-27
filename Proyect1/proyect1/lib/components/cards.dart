@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class OutlinedCardExample extends StatelessWidget {
-  String title = ""; String content = "";
+  
+    String title = ""; String content = "";
+    Icon icon =  const Icon(Icons.arrow_forward);
   OutlinedCardExample( {
     required this.title,
     required this.content,
-    Key? key,
+    Key? key, required this.icon,
     }):
     super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,16 +18,17 @@ class OutlinedCardExample extends StatelessWidget {
         height: 100,
         child: Column(children: [
           Row(crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
           Text(title),
-          const Icon(Icons.menu),//It is a constant icon
+          icon,//It is a constant icon
                   
         ],),
         Row(crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
           Text(content),
-          const Icon(Icons.arrow_forward)
+          const Icon(Icons.arrow_forward),
         ],),
         ],)
       );
