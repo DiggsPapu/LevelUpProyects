@@ -58,7 +58,7 @@ class app extends StatelessWidget{
       home: Scaffold(
           // ignore: prefer_const_literals_to_create_immutables
           body: Container(
-            color: Color.fromARGB(209, 70, 255, 101),
+            color: Color.fromARGB(148, 70, 255, 101),
             child: ListView(
             children: [  
               const titleSection().build(context), 
