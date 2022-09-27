@@ -27,7 +27,7 @@ class OutlinedCardExample extends StatelessWidget {
             child: 
             Text(title,
             style: const TextStyle(
-              fontSize: 20,
+              fontSize: 30,
               fontWeight: FontWeight.normal,
               fontFamily: 'Roboto',
               ),

@@ -56,10 +56,10 @@ class app extends StatelessWidget{
       title: "Proyect 1",
       
       home: Scaffold(
-        
           // ignore: prefer_const_literals_to_create_immutables
-          body: ListView(
-            padding: const EdgeInsets.only(top: 20.0, bottom: 50.0, left: 20.0, right: 20.0),
+          body: Container(
+            color: Color.fromARGB(209, 70, 255, 101),
+            child: ListView(
             children: [  
               const titleSection().build(context), 
               Padding(
@@ -83,7 +83,8 @@ class app extends StatelessWidget{
               ),
               OutlinedCardExample(title: "WIRED", content: "OUR PARTNERS",icon: const Icon(Icons.abc_outlined))       
           ],
-          ), 
+          ),
+          ) 
       ),
     );
   }

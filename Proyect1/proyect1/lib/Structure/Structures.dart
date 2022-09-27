@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyect1/components/Text.dart';
 
 // ignore: camel_case_types
 class titleSection extends StatelessWidget{
@@ -12,7 +11,7 @@ class titleSection extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.all(9.0),
+                  padding: EdgeInsets.only(right: 9.0, left: 9.0, top:9.0, bottom: 50.0),
                   child: Text(
                     "FINTIMES",
                     style: TextStyle( 
@@ -24,8 +23,8 @@ class titleSection extends StatelessWidget{
                       ),
                     ),
                 ),
-            Padding(
-                    padding: const EdgeInsets.all(9.0),
+            Padding(                 
+                    padding: const EdgeInsets.only(right: 9.0, left: 9.0, top:9.0, bottom: 50.0),
                     child:IconButton(
                     alignment: Alignment.topRight,
                     icon: const Icon(Icons.menu),//It is a constant icon
