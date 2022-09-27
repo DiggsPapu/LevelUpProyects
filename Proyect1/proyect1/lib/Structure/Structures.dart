@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'SecondPage.dart';
+
 // ignore: camel_case_types
 class titleSection extends StatelessWidget{
   const titleSection({super.key});
@@ -28,7 +30,12 @@ class titleSection extends StatelessWidget{
                     child:IconButton(
                     alignment: Alignment.topRight,
                     icon: const Icon(Icons.menu),//It is a constant icon
-                    onPressed: (){},)//Doesn't do anything while pressing
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SecondPage()),
+                        );
+                    },)//Doesn't do anything while pressing
                     ),
               ],
             ),

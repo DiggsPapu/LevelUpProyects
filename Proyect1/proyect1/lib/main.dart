@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyect1/Structure/SecondPage.dart';
 import 'package:proyect1/Structure/Structures.dart';
 import 'package:proyect1/components/Text.dart';
 import 'components/cards.dart';
