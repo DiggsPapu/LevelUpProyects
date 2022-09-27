@@ -41,14 +41,13 @@ class ClassicText extends StatelessWidget{
     return Text(
                   content,//The value of text
                   textAlign: TextAlign.start,//The alignment of text
-                  style: TextStyle( fontFamily: 'Roboto',
+                  style: TextStyle( 
+                    fontFamily: 'Roboto',
                   fontSize: textSize,
                   fontWeight: FontWeight.bold,
                   backgroundColor: Colors.black,
                   color: Colors.white
                    ),//The style and attributes of text
     );
-    
   } 
-
 }

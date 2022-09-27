@@ -62,10 +62,26 @@ class app extends StatelessWidget{
             padding: const EdgeInsets.only(top: 20.0, bottom: 50.0, left: 20.0, right: 20.0),
             children: [  
               const titleSection().build(context), 
+              Padding(
+                padding: const EdgeInsets.only(left: 9.0, right: 9.0),
+                child: ClassicText(content: "TOP APP'22", textSize: 15)
+                ),
               const motivationalSection(),
-              OutlinedCardExample(title: "title", content: "Ah",icon: const Icon(Icons.access_alarm_outlined)),
-              OutlinedCardExample(title: "title", content: "Ah",icon: Icon(Icons.abc_outlined)),
-              OutlinedCardExample(title: "title", content: "Ah",icon: Icon(Icons.abc_outlined))       
+              const Divider(
+                thickness: 5.0,
+                color: Colors.black,
+              ),
+              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: const Icon(Icons.access_alarm_outlined)),
+              const Divider(
+                thickness: 5.0,
+                color: Colors.black,
+              ),
+              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.abc_outlined)),
+              const Divider(
+                thickness: 5.0,
+                color: Colors.black,
+              ),
+              OutlinedCardExample(title: "WIRED", content: "OUR PARTNERS",icon: const Icon(Icons.abc_outlined))       
           ],
           ), 
       ),

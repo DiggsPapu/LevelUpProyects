@@ -11,10 +11,19 @@ class titleSection extends StatelessWidget{
       child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-              padding: const EdgeInsets.all(9.0),
-              child: ClassicText(content: "FINTIMES", textSize: 10),
-              ),
+                const Padding(
+                  padding: EdgeInsets.all(9.0),
+                  child: Text(
+                    "FINTIMES",
+                    style: TextStyle( 
+                      fontFamily: 'Roboto',
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: Colors.transparent,
+                      color: Colors.black
+                      ),
+                    ),
+                ),
             Padding(
                     padding: const EdgeInsets.all(9.0),
                     child:IconButton(
@@ -33,9 +42,19 @@ class motivationalSection extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 30.0, bottom: 30.0, left: 9.0, right: 9.0),
-      child:ClassicText(content: "Everything about investing plus way more.", textSize: 30)
+    return const Padding(
+      padding: EdgeInsets.only(top: 15.0, bottom: 50.0, left: 9.0, right: 9.0),
+      child:
+      Text(
+        "Introducing the first all-in-one tool to help you put your financial assets in the best possible opportunities",
+        style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 15,
+          fontWeight: FontWeight.normal,
+          backgroundColor: Colors.transparent,
+          color: Colors.black
+          ),
+        ),
     );
   }
 }
