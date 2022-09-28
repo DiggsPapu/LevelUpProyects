@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -45,8 +45,13 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+  // @override
+  // State<MyHomePage> createState() => _MyHomePageState();
+  
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return const app(); 
+  }
 }
 class app extends StatelessWidget{
   const app ({super.key});
@@ -57,6 +62,27 @@ class app extends StatelessWidget{
       title: "Proyect 1",
       
       home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                child: Text("Side Menu",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+              ListTile(
+            leading: const Icon(Icons.input),
+            title: const Text('Welcome'),
+            onTap: () => {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SecondPage()),
+              )
+            },
+          ),
+            ],
+          ),
+        ),
           // ignore: prefer_const_literals_to_create_immutables
           body: Container(
             color: Color.fromARGB(148, 70, 255, 101),
@@ -91,81 +117,82 @@ class app extends StatelessWidget{
   }
 
 }
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.yellow, Colors.green])),
-      child: Scaffold(
-          // By defaut, Scaffold background is white
-          // Set its value to transparent
-          backgroundColor: Colors.transparent,
-          body: 
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:  [
-               Expanded( //It is set constant
-                child: Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: ClassicText(content: "FUNTIMES",textSize: 15)
-                )
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     // This method is rerun every time setState is called, for instance as done
+//     // by the _incrementCounter method above.
+//     //
+//     // The Flutter framework has been optimized to make rerunning build methods
+//     // fast, so that you can just rebuild anything that needs updating rather
+//     // than having to individually change instances of widgets.
+//     return Container(
+//       decoration: const BoxDecoration(
+//           gradient: LinearGradient(
+//               begin: Alignment.topLeft,
+//               end: Alignment.bottomRight,
+//               colors: [Colors.yellow, Colors.green])),
+//       child: Scaffold(
+//           // By defaut, Scaffold background is white
+//           // Set its value to transparent
+//           backgroundColor: Colors.transparent,
+//           body: 
+//           Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             children: [
+//               Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children:  [
+//                Expanded( //It is set constant
+//                 child: Padding(
+//                 padding: const EdgeInsets.all(9.0),
+//                 child: ClassicText(content: "FUNTIMES",textSize: 15)
+//                 )
                 
-                ),
-                Expanded(//It is not set constant
-                  child: Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child:IconButton(
-                    alignment: Alignment.topRight,//The alignment
-                    icon: const Icon(Icons.menu),//It is a constant icon
-                    onPressed: (){},)//Doesn't do anything while pressing
-                    ),
-                  ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:  [
-              Expanded( //It is set constant
-                child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ClassicText(content: "TOP APP'22", textSize: 15)
-                  )
-                )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(9.0),
-            child: 
-              TripleText(
-                text1: 'Introducing the first',
-                text2: ' all-in-one tool',
-                text3: ' to help you put your financial assents in the best possible opportunities.')
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: Icon(Icons.abc_outlined)),
-              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: Icon(Icons.abc_outlined)),
-              OutlinedCardExample(title: "Wired", content: "OUR PARTNERS",icon: Icon(Icons.abc_outlined))
-            ],
-          )
-            ]
-          )
+//                 ),
+//                 Expanded(//It is not set constant
+//                   child: Padding(
+//                     padding: const EdgeInsets.all(9.0),
+//                     child:IconButton(
+//                     alignment: Alignment.topRight,//The alignment
+//                     icon: const Icon(Icons.menu),//It is a constant icon
+//                     onPressed: (){},)//Doesn't do anything while pressing
+//                     ),
+//                   ),
+//             ],
+//           ),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children:  [
+//               Expanded( //It is set constant
+//                 child: Padding(
+//                 padding: const EdgeInsets.all(8.0),
+//                 child: ClassicText(content: "TOP APP'22", textSize: 15)
+//                   )
+//                 )
+//             ],
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.all(9.0),
+//             child: 
+//               TripleText(
+//                 text1: 'Introducing the first',
+//                 text2: ' all-in-one tool',
+//                 text3: ' to help you put your financial assents in the best possible opportunities.')
+//           ),
+//           Column(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children: <Widget>[
+//               OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: const Icon(Icons.abc_outlined)),
+//               OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.abc_outlined)),
+//               OutlinedCardExample(title: "Wired", content: "OUR PARTNERS",icon: const Icon(Icons.abc_outlined)),
+              
+//             ],
+//           )
+//             ]
+//           )
           
-          ),
-    );
-  }
-}
+//           ),
+//     );
+//   }
+// }

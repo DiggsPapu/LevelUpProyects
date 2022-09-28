@@ -30,12 +30,7 @@ class titleSection extends StatelessWidget{
                     child:IconButton(
                     alignment: Alignment.topRight,
                     icon: const Icon(Icons.menu),//It is a constant icon
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SecondPage()),
-                        );
-                    },)//Doesn't do anything while pressing
+                    onPressed: (){ },)//Doesn't do anything while pressing
                     ),
               ],
             ),
