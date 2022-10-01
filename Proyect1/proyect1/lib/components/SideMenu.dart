@@ -23,9 +23,7 @@ class NavDrawer extends StatelessWidget {
             leading: Icon(Icons.input),
             title: Text('Welcome'),
             onTap: () => {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-              )
+              Navigator.pushNamed(context, '/second')
             },
           ),
           ListTile(

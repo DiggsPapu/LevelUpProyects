@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyect1/Structure/SecondPage.dart';
 import 'package:proyect1/Structure/Structures.dart';
+import 'package:proyect1/Structure/ThirdPage.dart';
 import 'package:proyect1/components/Text.dart';
 import 'components/cards.dart';
 void main() {
@@ -15,6 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Proyect 1 - Selected GUI',
+      routes: {
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => const SecondPage(),
+        ThirdPage.routeName: (context)=>const ThirdPage()
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -60,7 +66,6 @@ class app extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Proyect 1",
-      
       home: Scaffold(
         drawer: Drawer(
           child: ListView(
