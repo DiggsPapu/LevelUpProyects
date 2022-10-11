@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/Text.dart';
-import '../components/cards.dart';
+import '../components/Cards.dart';
 import 'Structures.dart';
 class FirstPage extends StatelessWidget{
   const FirstPage({super.key});

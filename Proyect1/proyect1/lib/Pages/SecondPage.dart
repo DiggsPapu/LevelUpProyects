@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proyect1/Pages/ThirdPage.dart';
+
+import '../components/Input.dart';
 class SecondPage extends StatelessWidget{
-  const SecondPage({super.key});
-  
+  SecondPage({super.key});
+  final controlador = TextEditingController();
     @override
     Widget build(BuildContext context) {
       // TODO: implement build
@@ -60,12 +62,13 @@ class SecondPage extends StatelessWidget{
               colors: [Color.fromARGB(255, 85, 170, 82), Color.fromARGB(255, 105, 177, 84), Color.fromARGB(255, 255, 235, 59), Color.fromARGB(255, 255, 209, 60)])),
         child: ListView(
           children: [
+            Input(controller: controlador),
             TextButton(
                 style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                 ),
                 onPressed: () { 
-                  Navigator.pushNamed(context, ThirdPage.routeName, arguments: ScreenArguments("Tercera pagina", "Estamos en la tercera pagina"));
+                  Navigator.pushNamed(context, ThirdPage.routeName, arguments: ScreenArguments("Tercera pagina", "Tu, ${controlador.text}estas en la tercera pagina" ));
                 },
                 child: const Text('Next Fragment'),
               )

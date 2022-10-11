@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/':(context) => const FirstPage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => const SecondPage(),
+        '/second': (context) => SecondPage(),
         ThirdPage.routeName: (context)=>const ThirdPage()
       },
       theme: ThemeData(
