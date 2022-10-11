@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyect1/Structure/SecondPage.dart';
+import 'package:proyect1/Pages/SecondPage.dart';
 
 class NavDrawer extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:proyect1/Structure/Structures.dart';
+import 'package:proyect1/Pages/Structures.dart';
 class ThirdPage extends StatelessWidget{
   const ThirdPage({super.key});
   static const routeName = '/ThirdPage';

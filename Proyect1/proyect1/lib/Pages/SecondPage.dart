@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyect1/Structure/Structures.dart';
-import 'package:proyect1/Structure/ThirdPage.dart';
+import 'package:proyect1/Pages/Structures.dart';
+import 'package:proyect1/Pages/ThirdPage.dart';
 class SecondPage extends StatelessWidget{
   const SecondPage({super.key});
   

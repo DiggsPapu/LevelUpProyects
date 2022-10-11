@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:proyect1/Structure/SecondPage.dart';
-import 'package:proyect1/Structure/Structures.dart';
-import 'package:proyect1/Structure/ThirdPage.dart';
-import 'package:proyect1/components/Text.dart';
-import 'components/cards.dart';
+import 'package:proyect1/Pages/FirstPage.dart';
+import 'package:proyect1/Pages/SecondPage.dart';
+import 'package:proyect1/Pages/ThirdPage.dart';
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Proyect 1 - Selected GUI',
+      initialRoute: '/',
       routes: {
+        '/':(context) => const FirstPage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const SecondPage(),
         ThirdPage.routeName: (context)=>const ThirdPage()
       },
       theme: ThemeData(
         // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -33,171 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const app(),
+      home: const FirstPage(),
     );
   }
 }
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-  // @override
-  // State<MyHomePage> createState() => _MyHomePageState();
-  
-  @override
-  Widget build(BuildContext context) {
-    return const app(); 
-  }
-}
-class app extends StatelessWidget{
-  const app ({super.key});
-  
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Proyect 1",
-      home: Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                child: Text("Side Menu",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ),
-              ListTile(
-            leading: const Icon(Icons.input),
-            title: const Text('Welcome'),
-            onTap: () => {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-              )
-            },
-          ),
-            ],
-          ),
-        ),
-          // ignore: prefer_const_literals_to_create_immutables
-          body: Container(
-            color: Color.fromARGB(148, 70, 255, 101),
-            child: ListView(
-            children: [  
-              const titleSection().build(context), 
-              Padding(
-                padding: const EdgeInsets.only(left: 9.0, right: 9.0),
-                child: ClassicText(content: "TOP APP'22", textSize: 15)
-                ),
-              const motivationalSection(),
-              const Divider(
-                thickness: 5.0,
-                color: Colors.black,
-              ),
-              OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: const Icon(Icons.access_alarm_outlined)),
-              const Divider(
-                thickness: 5.0,
-                color: Colors.black,
-              ),
-              OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.add_a_photo_rounded)),
-              const Divider(
-                thickness: 5.0,
-                color: Colors.black,
-              ),
-              OutlinedCardExample(title: "WIRED", content: "OUR PARTNERS",icon: const Icon(Icons.hourglass_empty_sharp))       
-          ],
-          ),
-          ) 
-      ),
-    );
-  }
-
-}
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     // This method is rerun every time setState is called, for instance as done
-//     // by the _incrementCounter method above.
-//     //
-//     // The Flutter framework has been optimized to make rerunning build methods
-//     // fast, so that you can just rebuild anything that needs updating rather
-//     // than having to individually change instances of widgets.
-//     return Container(
-//       decoration: const BoxDecoration(
-//           gradient: LinearGradient(
-//               begin: Alignment.topLeft,
-//               end: Alignment.bottomRight,
-//               colors: [Colors.yellow, Colors.green])),
-//       child: Scaffold(
-//           // By defaut, Scaffold background is white
-//           // Set its value to transparent
-//           backgroundColor: Colors.transparent,
-//           body: 
-//           Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             children: [
-//               Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children:  [
-//                Expanded( //It is set constant
-//                 child: Padding(
-//                 padding: const EdgeInsets.all(9.0),
-//                 child: ClassicText(content: "FUNTIMES",textSize: 15)
-//                 )
-                
-//                 ),
-//                 Expanded(//It is not set constant
-//                   child: Padding(
-//                     padding: const EdgeInsets.all(9.0),
-//                     child:IconButton(
-//                     alignment: Alignment.topRight,//The alignment
-//                     icon: const Icon(Icons.menu),//It is a constant icon
-//                     onPressed: (){},)//Doesn't do anything while pressing
-//                     ),
-//                   ),
-//             ],
-//           ),
-//           Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children:  [
-//               Expanded( //It is set constant
-//                 child: Padding(
-//                 padding: const EdgeInsets.all(8.0),
-//                 child: ClassicText(content: "TOP APP'22", textSize: 15)
-//                   )
-//                 )
-//             ],
-//           ),
-//           Padding(
-//             padding: const EdgeInsets.all(9.0),
-//             child: 
-//               TripleText(
-//                 text1: 'Introducing the first',
-//                 text2: ' all-in-one tool',
-//                 text3: ' to help you put your financial assents in the best possible opportunities.')
-//           ),
-//           Column(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children: <Widget>[
-//               OutlinedCardExample(title: "Strategy", content: "INVESTMENT PROCESS",icon: const Icon(Icons.abc_outlined)),
-//               OutlinedCardExample(title: "Team", content: "CHECK OUR EXPERTS",icon: const Icon(Icons.abc_outlined)),
-//               OutlinedCardExample(title: "Wired", content: "OUR PARTNERS",icon: const Icon(Icons.abc_outlined)),
-              
-//             ],
-//           )
-//             ]
-//           )
-          
-//           ),
-//     );
-//   }
-// }
