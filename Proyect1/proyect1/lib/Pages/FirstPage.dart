@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../components/Text.dart';
 import '../components/cards.dart';
-import 'SecondPage.dart';
 import 'Structures.dart';
 class FirstPage extends StatelessWidget{
   const FirstPage({super.key});
@@ -12,7 +10,24 @@ class FirstPage extends StatelessWidget{
     return MaterialApp(
       title: "Proyect 1",
       home: Scaffold(
-        drawer: Drawer(
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
+          elevation: 0.0,
+          backgroundColor: const Color.fromARGB(148, 70, 255, 101),
+          centerTitle: false,
+          title: const Text(
+            "FINTIMES",
+            style: TextStyle( 
+            fontFamily: 'Roboto',
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            backgroundColor: Colors.transparent,
+            color: Colors.black
+            ),
+          ),
+        ),
+        endDrawer: Drawer(
+          
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
@@ -36,7 +51,6 @@ class FirstPage extends StatelessWidget{
             color: const Color.fromARGB(148, 70, 255, 101),
             child: ListView(
             children: [  
-              const titleSection().build(context), 
               Padding(
                 padding: const EdgeInsets.only(left: 9.0, right: 9.0),
                 child: ClassicText(content: "TOP APP'22", textSize: 15)
@@ -63,5 +77,4 @@ class FirstPage extends StatelessWidget{
       ),
     );
   }
-
 }
