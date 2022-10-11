@@ -13,7 +13,7 @@ class FirstPage extends StatelessWidget{
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(148, 70, 255, 101),
+          backgroundColor: const Color.fromARGB(255, 85, 170, 82),
           centerTitle: false,
           title: const Text(
             "FINTIMES",
@@ -33,12 +33,20 @@ class FirstPage extends StatelessWidget{
             children: [
               const DrawerHeader(
                 child: Text("Side Menu",
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
               ListTile(
+            leading: const Icon(Icons.u_turn_left),
+            title: const Text('First Page'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushNamed(context, '/')
+            },
+          ),
+              ListTile(
             leading: const Icon(Icons.input),
-            title: const Text('Welcome'),
+            title: const Text('Second Page'),
             onTap: () => {
               Navigator.pushNamed(context, '/second')
             },
@@ -48,7 +56,7 @@ class FirstPage extends StatelessWidget{
         ),
           // ignore: prefer_const_literals_to_create_immutables
           body: Container(
-            color: const Color.fromARGB(148, 70, 255, 101),
+            color: const Color.fromARGB(255, 85, 170, 82),
             child: ListView(
             children: [  
               Padding(

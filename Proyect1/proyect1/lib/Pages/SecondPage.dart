@@ -8,8 +8,9 @@ class SecondPage extends StatelessWidget{
       // TODO: implement build
       return Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
           elevation: 0.0,
-          backgroundColor: const Color.fromARGB(148, 70, 255, 101),
+          backgroundColor: const Color.fromARGB(255, 85, 170, 82),
           centerTitle: false,
           title: const Text(
             "FINTIMES",
@@ -23,18 +24,28 @@ class SecondPage extends StatelessWidget{
           ),
         ),
         endDrawer: Drawer(
+          
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
               const DrawerHeader(
                 child: Text("Side Menu",
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
               ListTile(
-            leading: const Icon(Icons.input, color: Colors.black),
-            title: const Text('Welcome'),
+            leading: const Icon(Icons.u_turn_left),
+            title: const Text('First Page'),
             onTap: () => {
+              Navigator.pop(context),
+              Navigator.pushNamed(context, '/')
+            },
+          ),
+              ListTile(
+            leading: const Icon(Icons.input),
+            title: const Text('Second Page'),
+            onTap: () => {
+              Navigator.pop(context),
               Navigator.pushNamed(context, '/second')
             },
           ),
@@ -44,9 +55,9 @@ class SecondPage extends StatelessWidget{
         body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.yellow, Colors.green])),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color.fromARGB(255, 85, 170, 82), Color.fromARGB(255, 105, 177, 84), Color.fromARGB(255, 255, 235, 59), Color.fromARGB(255, 255, 209, 60)])),
         child: ListView(
           children: [
             TextButton(
@@ -56,7 +67,7 @@ class SecondPage extends StatelessWidget{
                 onPressed: () { 
                   Navigator.pushNamed(context, ThirdPage.routeName, arguments: ScreenArguments("Tercera pagina", "Estamos en la tercera pagina"));
                 },
-                child: Text('Next Fragment'),
+                child: const Text('Next Fragment'),
               )
           ],
         ),
