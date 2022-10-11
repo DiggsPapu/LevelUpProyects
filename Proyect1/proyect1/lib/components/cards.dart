@@ -23,7 +23,7 @@ class OutlinedCardExample extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
           Padding(
-            padding: const EdgeInsets.all(9.0),
+            padding: const EdgeInsets.only(top: 9.0, right: 17.0, left: 17.0),
             child: 
             Text(title,
             style: const TextStyle(
@@ -34,7 +34,7 @@ class OutlinedCardExample extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(9.0),
+            padding: const EdgeInsets.only(top: 9.0, right: 17.0, left: 17.0),
             child:IconButton(
             alignment: Alignment.topRight,
             icon: icon,//It is a constant icon
@@ -45,11 +45,11 @@ class OutlinedCardExample extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
           Padding(
-            padding: const EdgeInsets.all(9.0),
+            padding: const EdgeInsets.only(top: 9.0, right: 17.0, left: 17.0),
             child: Text(content),
             ),
           Padding(
-            padding: const EdgeInsets.all(9.0),
+            padding: const EdgeInsets.only(top: 9.0, right: 17.0, left: 17.0),
             child:IconButton(
             alignment: Alignment.bottomRight,
             icon: const Icon(Icons.arrow_forward),//It is a constant icon

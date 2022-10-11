@@ -46,7 +46,7 @@ class motivationalSection extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(top: 15.0, bottom: 50.0, left: 9.0, right: 9.0),
+      padding: EdgeInsets.only(top: 20.0, right: 17.0, left: 17.0, bottom: 50.0),
       child:
       Text(
         "Introducing the first all-in-one tool to help you put your financial assets in the best possible opportunities",

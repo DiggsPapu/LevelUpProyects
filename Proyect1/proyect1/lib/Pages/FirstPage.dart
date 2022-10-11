@@ -52,7 +52,7 @@ class FirstPage extends StatelessWidget{
             child: ListView(
             children: [  
               Padding(
-                padding: const EdgeInsets.only(left: 9.0, right: 9.0),
+                padding: const EdgeInsets.only(left: 17.0, right: 17.0, top: 50.0),
                 child: ClassicText(content: "TOP APP'22", textSize: 15)
                 ),
               const motivationalSection(),
