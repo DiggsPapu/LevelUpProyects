@@ -14,9 +14,9 @@ class TripleText extends StatelessWidget{
       RichText(
               text:TextSpan(
                 text: text1,
-                style: TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black),
+                style: const TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black),
                 children: <TextSpan>[
-                  TextSpan(text: text2, style: TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black )),
+                  TextSpan(text: text2, style: const TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black )),
                   TextSpan(text: text3, style: const TextStyle(fontFamily: 'Roboto',fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black ))
                 ]
               )

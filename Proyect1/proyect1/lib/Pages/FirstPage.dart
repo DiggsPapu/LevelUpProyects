@@ -25,9 +25,7 @@ class FirstPage extends StatelessWidget{
             leading: const Icon(Icons.input),
             title: const Text('Welcome'),
             onTap: () => {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
-              )
+              Navigator.pushNamed(context, '/second')
             },
           ),
             ],
@@ -35,7 +33,7 @@ class FirstPage extends StatelessWidget{
         ),
           // ignore: prefer_const_literals_to_create_immutables
           body: Container(
-            color: Color.fromARGB(148, 70, 255, 101),
+            color: const Color.fromARGB(148, 70, 255, 101),
             child: ListView(
             children: [  
               const titleSection().build(context), 
